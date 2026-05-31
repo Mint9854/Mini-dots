@@ -1,0 +1,99 @@
+# ╔══════════════════════════════════════════╗
+# ║   starship.toml — minimal/clean prompt   ║
+# ╚══════════════════════════════════════════╝
+
+"$schema" = "https://starship.rs/config-schema.json"
+
+# ── Global ───────────────────────────────────
+format = """
+$directory$git_branch$git_status$cmd_duration
+$character"""
+
+right_format = """$python$nodejs$rust$golang$lua"""
+
+add_newline    = true
+command_timeout = 1000
+
+# ── Prompt character ─────────────────────────
+[character]
+success_symbol = "[❯](bold #7e9ab5)"
+error_symbol   = "[❯](bold #c47878)"
+vimcmd_symbol  = "[❮](bold #78c49a)"
+
+# ── Directory ────────────────────────────────
+[directory]
+style            = "bold #a8b5c8"
+read_only        = " 󰌾"
+read_only_style  = "#c47878"
+truncation_length = 3
+truncate_to_repo = true
+format           = "[$path]($style)[$read_only]($read_only_style) "
+
+[directory.substitutions]
+"~/Documents" = "󰈙 docs"
+"~/Downloads" = " dl"
+"~/Pictures"  = " pics"
+"~/Music"     = "󰎆 music"
+"~"           = "󱂵 ~"
+
+# ── Git ──────────────────────────────────────
+[git_branch]
+symbol    = " "
+style     = "#7e9ab5"
+format    = "[$symbol$branch]($style) "
+truncation_length = 20
+
+[git_status]
+style     = "#c4ae78"
+format    = "([$all_status$ahead_behind]($style) )"
+ahead     = "⇡${count}"
+behind    = "⇣${count}"
+diverged  = "⇕⇡${ahead_count}⇣${behind_count}"
+modified  = "!${count}"
+staged    = "+${count}"
+untracked = "?${count}"
+deleted   = "✘${count}"
+
+# ── Command duration ─────────────────────────
+[cmd_duration]
+min_time    = 2000
+style       = "#4a4f66"
+format      = "[$duration]($style) "
+show_milliseconds = false
+
+# ── Language versions (right prompt) ─────────
+[python]
+symbol = " "
+style  = "#c4ae78"
+format = "[$symbol$version]($style) "
+detect_extensions = ["py"]
+
+[nodejs]
+symbol = " "
+style  = "#78c49a"
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = " "
+style  = "#c47878"
+format = "[$symbol$version]($style) "
+
+[golang]
+symbol = " "
+style  = "#78afc4"
+format = "[$symbol$version]($style) "
+
+[lua]
+symbol = " "
+style  = "#7e9ab5"
+format = "[$symbol$version]($style) "
+
+# ── Disabled modules ─────────────────────────
+[package]
+disabled = true
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true

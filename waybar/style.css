@@ -1,0 +1,148 @@
+/* ╔══════════════════════════════════════════╗
+   ║     waybar/style.css — minimal/clean     ║
+   ╚══════════════════════════════════════════╝ */
+
+/* ── Palette ──────────────────────────────── */
+@define-color base    #13151e;
+@define-color surface #1c1f2b;
+@define-color overlay #252838;
+@define-color muted   #4a4f66;
+@define-color subtle  #7e8599;
+@define-color text    #c5cdd9;
+@define-color accent  #7e9ab5;
+@define-color accent2 #a8b5c8;
+@define-color red     #c47878;
+@define-color yellow  #c4ae78;
+@define-color green   #78c49a;
+
+/* ── Reset ────────────────────────────────── */
+* {
+    font-family: "JetBrains Mono", "Symbols Nerd Font Mono", monospace;
+    font-size:   12px;
+    font-weight: 400;
+    border:      none;
+    border-radius: 0;
+    min-height:  0;
+    margin:      0;
+    padding:     0;
+}
+
+/* ── Bar ──────────────────────────────────── */
+window#waybar {
+    background: alpha(@base, 0.55);
+    border-bottom: 1px solid alpha(@muted, 0.30);
+    color: @text;
+    transition: background 0.3s ease;
+}
+
+window#waybar.hidden { opacity: 0.2; }
+
+/* ── Tooltip ──────────────────────────────── */
+tooltip {
+    background:   @surface;
+    border:       1px solid alpha(@accent, 0.4);
+    border-radius: 6px;
+    color:        @text;
+    padding:      6px 10px;
+}
+
+/* ── Workspaces ───────────────────────────── */
+#workspaces {
+    margin: 4px 6px 4px 10px;
+    gap:    2px;
+}
+
+#workspaces button {
+    background:    transparent;
+    color:         @subtle;
+    border-radius: 6px;
+    min-width:     22px;
+    min-height:    22px;
+    padding:       0 6px;
+    transition:    all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background: alpha(@overlay, 0.7);
+    color:      @text;
+}
+
+#workspaces button.active {
+    background: alpha(@accent, 0.18);
+    color:      @accent2;
+    font-weight: 600;
+    border:     1px solid alpha(@accent, 0.45);
+}
+
+#workspaces button.urgent {
+    background: alpha(@red, 0.2);
+    color:      @red;
+}
+
+/* ── Window title ─────────────────────────── */
+#window {
+    color:   @subtle;
+    padding: 0 10px;
+    font-size: 11px;
+}
+
+/* ── Clock ────────────────────────────────── */
+#clock {
+    color:       @text;
+    font-weight: 500;
+    padding:     0 14px;
+    letter-spacing: 0.03em;
+}
+
+/* ── Shared module style ──────────────────── */
+#pulseaudio,
+#network,
+#battery,
+#cpu,
+#memory,
+#tray,
+#custom-power {
+    color:   @subtle;
+    padding: 0 10px;
+    transition: color 0.2s ease;
+}
+
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover {
+    color: @text;
+}
+
+/* ── Audio ────────────────────────────────── */
+#pulseaudio.muted { color: @muted; }
+
+/* ── Network ──────────────────────────────── */
+#network.disconnected { color: @muted; }
+
+/* ── Battery ──────────────────────────────── */
+#battery.charging  { color: @green; }
+#battery.warning   { color: @yellow; }
+#battery.critical  { color: @red; }
+
+/* ── CPU / Mem high usage ─────────────────── */
+#cpu.warning,
+#memory.warning    { color: @yellow; }
+
+#cpu.critical,
+#memory.critical   { color: @red; }
+
+/* ── Tray ─────────────────────────────────── */
+#tray { padding: 0 8px; }
+#tray > .passive   { -gtk-icon-effect: dim;    }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+
+/* ── Power button ─────────────────────────── */
+#custom-power {
+    color:         @muted;
+    padding-right: 14px;
+    font-size:     13px;
+}
+
+#custom-power:hover { color: @red; }

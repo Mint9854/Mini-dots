@@ -1,0 +1,17 @@
+[window]
+width=480
+height=400
+location=center
+orientation=vertical
+halign=fill
+gtk-dark=true
+prompt=
+
+[style]
+# Loaded from style.css
+
+[search]
+allow_markup=false
+allow_images=true
+insensitive=true
+parse_search=false

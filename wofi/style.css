@@ -1,0 +1,72 @@
+/* ╔══════════════════════════════════════════╗
+   ║      wofi/style.css — minimal/clean      ║
+   ╚══════════════════════════════════════════╝ */
+
+/* ── Palette (mirrors waybar) ─────────────── */
+@define-color base    #13151e;
+@define-color surface #1c1f2b;
+@define-color overlay #252838;
+@define-color muted   #4a4f66;
+@define-color subtle  #7e8599;
+@define-color text    #c5cdd9;
+@define-color accent  #7e9ab5;
+@define-color accent2 #a8b5c8;
+
+/* ── Window ───────────────────────────────── */
+window {
+    font-family:  "JetBrains Mono", "Symbols Nerd Font Mono", monospace;
+    font-size:    13px;
+    background:   alpha(@base, 0.92);
+    border:       1px solid alpha(@muted, 0.45);
+    border-radius: 10px;
+    box-shadow:   0 8px 32px alpha(#000000, 0.45);
+}
+
+/* ── Search box ───────────────────────────── */
+#input {
+    background:    @surface;
+    border:        1px solid alpha(@accent, 0.3);
+    border-radius: 7px;
+    color:         @text;
+    caret-color:   @accent;
+    padding:       8px 14px;
+    margin:        10px;
+    font-size:     13px;
+}
+
+#input:focus { border-color: alpha(@accent, 0.7); }
+
+/* ── Scroll area ──────────────────────────── */
+#scroll {
+    margin: 0 6px 8px 6px;
+}
+
+/* ── Entries ──────────────────────────────── */
+#entry {
+    padding:       7px 12px;
+    border-radius: 6px;
+    color:         @subtle;
+    transition:    all 0.15s ease;
+}
+
+#entry:hover,
+#entry:selected {
+    background: alpha(@overlay, 0.85);
+    color:      @text;
+}
+
+#entry:selected {
+    border: 1px solid alpha(@accent, 0.35);
+}
+
+/* ── App name + description ───────────────── */
+#text {
+    color: @text;
+}
+
+#text:selected { color: @accent2; }
+
+/* ── App icon ─────────────────────────────── */
+#img {
+    margin-right: 10px;
+}
