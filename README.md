@@ -10,7 +10,7 @@ Cold dark palette · JetBrains Mono · thin borders · blur
 
 **One-liner** (clone + install in one shot):
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/mint/mini-dots/main/install.sh)
+bash <(curl -sL https://raw.githubusercontent.com/Mint9854/mini-dots/main/install.sh)
 ```
 
 **Manual clone:**
