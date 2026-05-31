@@ -15,7 +15,7 @@ bash <(curl -sL https://raw.githubusercontent.com/mint/mini-dots/main/install.sh
 
 **Manual clone:**
 ```bash
-git clone https://github.com/mint/mini-dots.git ~/.dotfiles
+git clone https://github.com/Mint9854/mini-dots.git ~/.dotfiles
 bash ~/.dotfiles/install.sh
 ```
 
