@@ -1,6 +1,6 @@
 # mini-dots
 
-> minimal/clean dotfiles for CachyOS + Hyprland
+> minimal/clean dotfiles Hyprland
 
 Cold dark palette · JetBrains Mono · thin borders · blur
 
