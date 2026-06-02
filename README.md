@@ -7,9 +7,18 @@ Cold dark palette · JetBrains Mono · thin borders · blur
 ---
 ##Sowcase
 <img width="1920" height="1079" alt="image" src="https://github.com/user-attachments/assets/b77d38cc-0bef-44cc-9d2d-7305c52e1677" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/70de4bbe-0d26-48ef-8abb-e4b0c20669ea" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c1d5668b-d8a2-40e4-b20b-6eff3d2ed704" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/261027b9-53d8-4e30-841a-64c8fa958cb5" />
 
 
-https://github.com/user-attachments/assets/b18c0773-394e-4b15-ba8e-8a10d4a2bb67
+
+
+
+https://github.com/user-attachments/assets/1119fcde-0e8c-462f-a11b-657959891dc0
+
+
+
 
 
 ## Install
