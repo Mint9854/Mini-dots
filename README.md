@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/1119fcde-0e8c-462f-a11b-657959891dc0
 
 Automatic Installation:
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/Mint9854/mini-dots/main/install.sh)
+git clone https://github.com/Mint9854/Mini-dots.git ~/.dotfiles && bash ~/.dotfiles/install.sh
 ```
 
 **Manual Installation:**
