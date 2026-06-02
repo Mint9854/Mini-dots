@@ -70,7 +70,7 @@ bash ~/.dotfiles/install.sh
 | `Super + Shift 1–6` | Move to workspace |
 | `Super + V`       | Clipboard history   |
 | `Super + Shift+S` | Screenshot (area)   |
-| `Super + W`       | Reload Waybar       |
+| `Super + W`       | Wallpaper Selector  |
 
 ---
 
