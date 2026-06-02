@@ -1,17 +1,13 @@
-[window]
-width=480
+[config]
+show=drun
+prompt=Search
+width=500
 height=400
-location=center
-orientation=vertical
-halign=fill
-gtk-dark=true
-prompt=
-
-[style]
-# Loaded from style.css
-
-[search]
-allow_markup=false
+columns=1
 allow_images=true
+image_size=32
+term=kitty
 insensitive=true
-parse_search=false
+print_command=true
+hide_scroll=true
+no_actions=true

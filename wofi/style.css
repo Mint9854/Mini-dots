@@ -1,72 +1,105 @@
-/* ╔══════════════════════════════════════════╗
-   ║      wofi/style.css — minimal/clean      ║
-   ╚══════════════════════════════════════════╝ */
+@import url('/home/ws-73/.cache/wal/colors-waybar.css');
 
-/* ── Palette (mirrors waybar) ─────────────── */
-@define-color base    #13151e;
-@define-color surface #1c1f2b;
-@define-color overlay #252838;
-@define-color muted   #4a4f66;
-@define-color subtle  #7e8599;
-@define-color text    #c5cdd9;
-@define-color accent  #7e9ab5;
-@define-color accent2 #a8b5c8;
+@define-color mauve  @color9;
+@define-color red  @color9;
+@define-color lavender  @color7;
+@define-color text  @color7;
+@keyframes fadeIn {
+    0% {
+    }
+    100% {
+    }
+}
 
-/* ── Window ───────────────────────────────── */
+* {
+    all:unset;
+    font-family: 'CodeNewRoman Nerd Font Mono', monospace;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    text-shadow:none;
+    background-color:transparent;
+}
+
 window {
-    font-family:  "JetBrains Mono", "Symbols Nerd Font Mono", monospace;
-    font-size:    13px;
-    background:   alpha(@base, 0.92);
-    border:       1px solid alpha(@muted, 0.45);
-    border-radius: 10px;
-    box-shadow:   0 8px 32px alpha(#000000, 0.45);
+    all:unset;
+    padding: 20px;
+    border-radius: 0px;
+    background-color: alpha(@background,.5);
 }
-
-/* ── Search box ───────────────────────────── */
-#input {
-    background:    @surface;
-    border:        1px solid alpha(@accent, 0.3);
-    border-radius: 7px;
-    color:         @text;
-    caret-color:   @accent;
-    padding:       8px 14px;
-    margin:        10px;
-    font-size:     13px;
+#inner-box {
+    margin: 2px;
+    padding: 5px
+    border: none;
 }
-
-#input:focus { border-color: alpha(@accent, 0.7); }
-
-/* ── Scroll area ──────────────────────────── */
+#outer-box {    
+    border: none;
+}
 #scroll {
-    margin: 0 6px 8px 6px;
+    margin: 0px;
+    padding: 30px;
+    border: none;
 }
-
-/* ── Entries ──────────────────────────────── */
-#entry {
-    padding:       7px 12px;
-    border-radius: 6px;
-    color:         @subtle;
-    transition:    all 0.15s ease;
-}
-
-#entry:hover,
-#entry:selected {
-    background: alpha(@overlay, 0.85);
-    color:      @text;
-}
-
-#entry:selected {
-    border: 1px solid alpha(@accent, 0.35);
-}
-
-/* ── App name + description ───────────────── */
-#text {
+#input {
+    all:unset;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+    padding: 20px;
+    border: none;
+    outline: none;
     color: @text;
+    box-shadow: 1px 1px 5px rgba(0,0,0, .5);
+    border-radius:10;
+    background-color: alpha(@background,.2);
+}
+#input image {
+    border: none;
+    color: @red;
+    padding-right:10px;
+}
+#input * {
+    border: none;
+    outline: none;
 }
 
-#text:selected { color: @accent2; }
+#input:focus {
+    outline: none;
+    border: none;
 
-/* ── App icon ─────────────────────────────── */
-#img {
-    margin-right: 10px;
+    border-radius:10;
+}
+#text {
+    margin: 5px;
+    border: none;
+    color: @text;
+    outline: none;
+}
+#text {
+    margin: 5px;
+    border: none;
+    color: @text;
+    outline: none;
+}
+#entry {
+    border: none;
+    margin: 5px;
+    padding: 10px;
+}
+#entry arrow {
+    border: none;
+    color: @lavender;
+
+}
+#entry:selected {
+    box-shadow: 1px 1px 5px rgba(255,255,255, .03);
+    border: none;
+    border-radius: 20px;
+    background-color:transparent;
+}
+#entry:selected #text {
+    color: @mauve;
+}
+#entry:drop(active) {
+    background-color: @lavender !important;
 }

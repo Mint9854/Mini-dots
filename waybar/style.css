@@ -1,148 +1,175 @@
-/* ╔══════════════════════════════════════════╗
-   ║     waybar/style.css — minimal/clean     ║
-   ╚══════════════════════════════════════════╝ */
 
-/* ── Palette ──────────────────────────────── */
-@define-color base    #13151e;
-@define-color surface #1c1f2b;
-@define-color overlay #252838;
-@define-color muted   #4a4f66;
-@define-color subtle  #7e8599;
-@define-color text    #c5cdd9;
-@define-color accent  #7e9ab5;
-@define-color accent2 #a8b5c8;
-@define-color red     #c47878;
-@define-color yellow  #c4ae78;
-@define-color green   #78c49a;
-
-/* ── Reset ────────────────────────────────── */
+@import "/home/mint/.cache/wallust/waybar.css";
 * {
-    font-family: "JetBrains Mono", "Symbols Nerd Font Mono", monospace;
-    font-size:   12px;
-    font-weight: 400;
-    border:      none;
-    border-radius: 0;
-    min-height:  0;
-    margin:      0;
-    padding:     0;
+    font-size:15px;
+    font-family: "CodeNewRoman Nerd Font Propo";
 }
-
-/* ── Bar ──────────────────────────────────── */
-window#waybar {
-    background: alpha(@base, 0.55);
-    border-bottom: 1px solid alpha(@muted, 0.30);
-    color: @text;
-    transition: background 0.3s ease;
+window#waybar{
+    all:unset;
 }
-
-window#waybar.hidden { opacity: 0.2; }
-
-/* ── Tooltip ──────────────────────────────── */
+.modules-left {
+    padding:7px;
+    margin:10 0 5 10;
+    border-radius:10px;
+    background: alpha(@background,.6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+.modules-center {
+    padding:7px;
+    margin:10 0 5 0;
+    border-radius:10px;
+    background: alpha(@background,.6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    min-width: 150.5px;
+}
+.modules-right {
+    padding:7px;
+    margin: 10 10 5 0;
+    border-radius:10px;
+    background: alpha(@background,.6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
 tooltip {
-    background:   @surface;
-    border:       1px solid alpha(@accent, 0.4);
-    border-radius: 6px;
-    color:        @text;
-    padding:      6px 10px;
+    background:@background;
+    color: @color7;
+}
+#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+    transition: all .3s ease;
+    color:@color9;
+}
+#custom-notification {
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+}
+#clock{
+    padding: 0px 5px;
+    color:@color7;
+    transition: all .3s ease;
+}
+#custom-pacman{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+
 }
 
-/* ── Workspaces ───────────────────────────── */
 #workspaces {
-    margin: 4px 6px 4px 10px;
-    gap:    2px;
+    padding: 0px 5px;
+    text-shadow:none;
 }
-
 #workspaces button {
-    background:    transparent;
-    color:         @subtle;
-    border-radius: 6px;
-    min-width:     22px;
-    min-height:    22px;
-    padding:       0 6px;
-    transition:    all 0.2s ease;
+    background: @c0;
 }
-
 #workspaces button:hover {
-    background: alpha(@overlay, 0.7);
-    color:      @text;
+    color:rgba(0,0,0,0);
+    border: none;
+    background: @c1
 }
-
 #workspaces button.active {
-    background: alpha(@accent, 0.18);
-    color:      @accent2;
-    font-weight: 600;
-    border:     1px solid alpha(@accent, 0.45);
+    border: none;
+    padding: 0px 2px;
+    border-radius:10px;
+    background: @c1;
+    min-width: 30px;
+}
+#workspaces button.active:hover{
+    background: @c2;
+}
+#workspaces button.empty {
+    color: transparent;
+    border: none;
+    background: alpha(@background,.5) ;
+
+}
+#workspaces button.empty:hover {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty.active {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: none;
+    background: @c1;
+}
+#workspaces button.empty.active:hover{
+    background: @c2;
+}
+#bluetooth{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@c7;
+
+}
+#network{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@c7;
+
+}
+#battery{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@c7;
+
+
+}
+#battery.charging {
+    color: #26A65B;
 }
 
-#workspaces button.urgent {
-    background: alpha(@red, 0.2);
-    color:      @red;
+#battery.warning:not(.charging) {
+    color: #ffbe61;
 }
 
-/* ── Window title ─────────────────────────── */
-#window {
-    color:   @subtle;
-    padding: 0 10px;
-    font-size: 11px;
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#group-expand{
+    padding: 0px 5px;
+    transition: all .3s ease; 
+}
+#custom-expand{
+    padding: 0px 5px;
+    color:alpha(@foreground,.2);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
+    transition: all .3s ease; 
+}
+#custom-expand:hover{
+    color:rgba(255,255,255,.2);
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+}
+#custom-colorpicker{
+    padding: 0px 5px;
+}
+#cpu,#memory,#temperature{
+    padding: 0px 5px;
+    transition: all .3s ease; 
+    color:@c7;
+
+}
+#custom-endpoint{
+    color:transparent;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+
+}
+#tray{
+    padding: 0px 5px;
+    transition: all .3s ease; 
+
+}
+#tray menu * {
+    padding: 0px 5px;
+    transition: all .3s ease; 
 }
 
-/* ── Clock ────────────────────────────────── */
-#clock {
-    color:       @text;
-    font-weight: 500;
-    padding:     0 14px;
-    letter-spacing: 0.03em;
+#tray menu separator {
+    padding: 0px 5px;
+    transition: all .3s ease; 
 }
-
-/* ── Shared module style ──────────────────── */
-#pulseaudio,
-#network,
-#battery,
-#cpu,
-#memory,
-#tray,
-#custom-power {
-    color:   @subtle;
-    padding: 0 10px;
-    transition: color 0.2s ease;
-}
-
-#pulseaudio:hover,
-#network:hover,
-#battery:hover,
-#cpu:hover,
-#memory:hover {
-    color: @text;
-}
-
-/* ── Audio ────────────────────────────────── */
-#pulseaudio.muted { color: @muted; }
-
-/* ── Network ──────────────────────────────── */
-#network.disconnected { color: @muted; }
-
-/* ── Battery ──────────────────────────────── */
-#battery.charging  { color: @green; }
-#battery.warning   { color: @yellow; }
-#battery.critical  { color: @red; }
-
-/* ── CPU / Mem high usage ─────────────────── */
-#cpu.warning,
-#memory.warning    { color: @yellow; }
-
-#cpu.critical,
-#memory.critical   { color: @red; }
-
-/* ── Tray ─────────────────────────────────── */
-#tray { padding: 0 8px; }
-#tray > .passive   { -gtk-icon-effect: dim;    }
-#tray > .needs-attention { -gtk-icon-effect: highlight; }
-
-/* ── Power button ─────────────────────────── */
-#custom-power {
-    color:         @muted;
-    padding-right: 14px;
-    font-size:     13px;
-}
-
-#custom-power:hover { color: @red; }
