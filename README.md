@@ -5,6 +5,12 @@
 Cold dark palette · JetBrains Mono · thin borders · blur
 
 ---
+##Sowcase
+<img width="1920" height="1079" alt="image" src="https://github.com/user-attachments/assets/b77d38cc-0bef-44cc-9d2d-7305c52e1677" />
+
+
+https://github.com/user-attachments/assets/b18c0773-394e-4b15-ba8e-8a10d4a2bb67
+
 
 ## Install
 
@@ -33,6 +39,7 @@ bash ~/.dotfiles/install.sh
 | Component   | Config                          |
 |-------------|----------------------------------|
 | Hyprland    | window rules, animations, gaps  |
+| Hyprlock    | Lock screen                     |
 | Hyprpaper   | wallpaper                       |
 | Hypridle    | idle / lock / sleep             |
 | Waybar      | top bar, blurred, centered clock|
@@ -71,7 +78,7 @@ bash ~/.dotfiles/install.sh
 | `Super + V`       | Clipboard history   |
 | `Super + Shift+S` | Screenshot (area)   |
 | `Super + W`       | Wallpaper Selector  |
-
+| 'Super + L'       | Lockscreen          |
 ---
 
 ## After install
